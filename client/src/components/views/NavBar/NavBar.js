@@ -33,7 +33,7 @@ function NavBar(props){
 
     return (
         <nav>
-            <Link to="/" className="nav-logo">LOGO</Link>
+            <Link to="/" className="nav-logo"><h3>NodeJS & React</h3></Link>
             <ul>
                 <li>
                      <Link to="/" className="nav-link">HOME</Link>
