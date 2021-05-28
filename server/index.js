@@ -17,24 +17,17 @@ app.use(bodyParser.json());
 //token을 쿠키에 저장하기 위한 cookieParser
 app.use(cookieParser());
 
+
+const url="mongodb://localhost:27017";
+
 const mongoose =require('mongoose');
-mongoose.connect(config.mongoURI,{
+mongoose.connect(url,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true
 }).then(()=>console.log('MongoDB Conneted...'))
 .catch(err=>console.log(err));
-
-
-app.get('/api/hello',(req,res)=>{
-  res.send("안뇽");
-});
-
-
-app.get('/', (req, res) => {
-  res.send('Hello World!333')
-})
 
 app.post('/api/users/register',(req, res)=>{
 
